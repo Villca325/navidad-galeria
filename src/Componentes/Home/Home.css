@@ -1,0 +1,187 @@
+/* ======================= */
+/* -------- RESET Y BASE -------- */
+.home {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.section {
+  width: 100%;
+  padding: 80px 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+/* ======================= */
+/* -------- COLORES POR SECCIÓN -------- */
+.section.red {
+  background-color: #D90429;
+  color: #ffffff;
+}
+
+.section.green {
+  background-color: #4CAF50;
+  color: #ffffff;
+}
+
+.section.white {
+  background-color: #F7F7F7;
+  color: #222;
+}
+
+.section.gold {
+  background-color: #FFC300;
+  color: #000;
+}
+
+/* ======================= */
+/* -------- HERO SECTION -------- */
+.hero-container {
+  display: flex;
+  justify-content: space-between; /* contenido central */
+  align-items: center;
+  position: relative;      /* necesario para absolute */
+  padding: 4rem 0;         /* solo padding vertical */
+  width: 100%;
+}
+
+/* Imágenes decorativas pegadas a los bordes */
+.hero-img-left {
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 200px;
+  height: auto;
+  margin: 0;
+}
+
+.hero-img-right {
+  position: relative;
+  right: 0;
+  bottom: 0;
+  width: 250px;
+  height: auto;
+  margin: 0;
+}
+
+/* Contenido central */
+.hero-content {
+  text-align: center;
+  z-index: 1;  /* que quede encima de las imágenes */
+}
+
+/* ======================= */
+/* -------- TITULOS -------- */
+.decorativo {
+  font-family: "Mountains of Christmas", cursive;
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px rgba(255, 195, 0, 0.8);
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  margin-bottom: 30px;
+}
+
+/* ======================= */
+/* -------- BOTONES -------- */
+.btn-cta {
+  background-color: #FFC300;
+  color: #000;
+  font-weight: bold;
+  padding: 12px 25px;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-cta:hover {
+  background-color: #D90429;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+/* ======================= */
+/* -------- GALERÍA -------- */
+.galeria-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+  width: 100%;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* ======================= */
+/* -------- RESPONSIVE -------- */
+@media (max-width: 768px) {
+
+  /* Hero section: apilar contenido */
+  .hero-container {
+    flex-direction: column;
+    padding: 2rem 5%;
+  }
+
+  /* Ajustes de imágenes: abajo del contenido */
+  .hero-img-left
+ {
+    position: relative;
+    width: 180px;
+    margin-top: 1rem;
+    bottom: auto;
+  }
+    .hero-img-right {
+    position: relative;
+    width: 200px;
+    margin-top: 1rem;
+    bottom: auto;
+  }
+
+  .decorativo {
+    font-size: 2.2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .btn-cta {
+    padding: 10px 20px;
+  }
+
+  .section {
+    padding: 60px 5%;
+  }
+}
+
+/* ======================= */
+/* -------- AJUSTES ADICIONALES -------- */
+.home,
+.section {
+  box-sizing: border-box;
+}

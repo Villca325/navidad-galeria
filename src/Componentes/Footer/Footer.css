@@ -1,0 +1,85 @@
+.footer {
+  background-color: #D90429; /* Rojo Festivo */
+  color: #F7F7F7; /* Blanco Nieve */
+  font-family: "Poppins", sans-serif;
+  border-top: 3px solid #4CAF50; /* Verde decorativo */
+  box-shadow: 0 -4px 15px rgba(255, 195, 0, 0.2); /* toque dorado */
+  position: relative;
+  overflow: hidden;
+}
+
+.cat-container {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.cat-image {
+  max-height: 200px;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .cat-image {
+    max-height: 150px;
+  }
+}
+
+.footer-title {
+  color: #FFC300; /* Dorado cálido */
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.footer hr {
+  width: 60px;
+  height: 3px;
+  background-color: #4CAF50; /* Verde decorativo */
+  border: none;
+  margin: 0 auto 1rem auto;
+}
+
+.footer p,
+.footer a {
+  color: #F7F7F7;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer a:hover {
+  color: #FFC300; /* Dorado cálido */
+  transform: translateX(4px);
+}
+
+.footer .fa-icon,
+.footer .svg-inline--fa {
+  color: #FFC300;
+  margin-right: 8px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer .svg-inline--fa:hover {
+  transform: scale(1.1);
+  color: #F7F7F7;
+}
+
+.footer .container {
+  max-width: 1100px;
+}
+
+.footer .row {
+  justify-content: center;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 10px;
+  font-size: 0.85rem;
+  color: rgba(247, 247, 247, 0.8);
+}
