@@ -1,5 +1,6 @@
 import { StrictMode } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
@@ -14,7 +15,7 @@ function App() {
 
 
     <StrictMode>
-      <BrowserRouter>
+      <BrowserRouter  basename="/navidad-galeria">
         <div className="App">
           <Snowfall
           color="#FFFFFF"
@@ -33,6 +34,8 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/subir" element={<Subir />} />
+            {/* Redireccionar a la página de inicio */}
+           <Route path="*" element={<Navigate to="/" />} />
           </Routes>
 
           <Footer />
