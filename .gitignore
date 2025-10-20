@@ -22,3 +22,15 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Dependencias
+node_modules/
+dist/
+.vite/
+
+# Archivos temporales
+*.log
+.DS_Store
+
+# Firebase config o claves privadas (si decides ocultarlas)
+src/Componentes/firebase.js

@@ -1,80 +1,230 @@
 .subir-container {
-  padding: 120px 20px 60px;
   min-height: 100vh;
-  background-color: #4CAF50; /* Blanco Nieve */
-  color: #333;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #D90429 0%, #4CAF50 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
 }
 
 .titulo-subir {
-  color: #d90429; /* Rojo Festivo */
-  font-size: 2.2rem;
+  color: white;
+  font-family: "Mountains of Christmas", cursive;
+  font-size: 2.5rem;
   margin-bottom: 30px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.mensaje {
+  padding: 15px 25px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-align: center;
+  max-width: 500px;
+  width: 100%;
+}
+
+.mensaje.exito {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.mensaje.error {
+  background-color: #D90429;
+  color: white;
+}
+
+.mensaje.info {
+  background-color: #FFC300;
+  color: #000;
 }
 
 .subir-form {
   background: white;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 25px;
-  width: 100%;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
   max-width: 500px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.input-group {
+  margin-bottom: 20px;
 }
 
 .input-group label {
+  display: block;
+  margin-bottom: 8px;
   font-weight: bold;
-  margin-bottom: 6px;
-  color: #4caf50; /* Verde Grinch */
+  color: #000000;
 }
 
-.input-group input[type="text"],
-.input-group input[type="file"] {
+.input-group input {
   width: 100%;
-  padding: 10px;
-  border: 2px solid #ffc300; /* Dorado Cálido */
+  padding: 12px;
+  border: 2px solid #ddd;
   border-radius: 8px;
   font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: #4CAF50;
+}
+
+.input-group input:disabled {
+  background-color: #f5f5f5;
+  cursor: not-allowed;
+}
+
+.subir-form label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #333;
+}
+
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  min-height: 100px;
+  resize: vertical;
+  font-family: inherit;
+  transition: border-color 0.3s;
+  margin-bottom: 20px;
+}
+
+textarea:focus {
+  outline: none;
+  border-color: #4CAF50;
+}
+
+textarea:disabled {
+  background-color: #f5f5f5;
+  cursor: not-allowed;
 }
 
 .btn-subir {
-  background-color: #d90429; /* Rojo Festivo */
+  width: 100%;
+  background-color: #4CAF50;
   color: white;
-  font-weight: bold;
-  padding: 12px;
   border: none;
-  border-radius: 10px;
-  transition: all 0.3s ease;
+  padding: 15px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-.btn-subir:hover {
-  background-color: #ffc300; /* Dorado al pasar */
-  color: #000;
+.btn-subir:hover:not(:disabled) {
+  background-color: #D90429;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(217, 4, 41, 0.3);
+}
+
+.btn-subir:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
 }
 
 .preview {
-  margin-top: 40px;
-  text-align: center;
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  max-width: 500px;
+  width: 100%;
+}
+
+.preview p {
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: #333;
 }
 
 .preview-box {
-  width: 300px;
-  height: 200px;
-  border: 2px dashed #ccc;
+  border: 2px dashed #ddd;
   border-radius: 10px;
+  min-height: 250px;
   display: flex;
-  align-items: center;
   justify-content: center;
-  background: #fff;
-  margin: 0 auto;
-  color: #888;
-  font-style: italic;
+  align-items: center;
+  background-color: #f9f9f9;
+  overflow: hidden;
 }
 
+.preview-box p {
+  color: #999;
+  font-weight: normal;
+}
 
+.img-preview {
+  max-width: 100%;
+  max-height: 400px;
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+/* Estilos para la galería */
+.galeria {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 900px;
+}
+
+.tarjeta {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.tarjeta:hover {
+  transform: scale(1.03);
+}
+
+.img-galeria {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.btn-eliminar {
+  background-color: #d90429;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.btn-eliminar:hover {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .titulo-subir {
+    font-size: 2rem;
+  }
+
+  .subir-form,
+  .preview {
+    padding: 20px;
+  }
+}
